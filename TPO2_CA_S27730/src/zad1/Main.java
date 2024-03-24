@@ -18,7 +18,7 @@ public class Main {
     // ...
     // część uruchamiająca GUI
     Gui gui = new Gui();
-    gui.frame.setVisible(true);
+//    gui.frame.setVisible(true);
 
 
   }
