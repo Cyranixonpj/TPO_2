@@ -27,7 +27,9 @@ public class Gui {
     }
 
     private void init() {
-        // Ustawienie UI Manager
+
+
+
         JFrame dialogFrame = new JFrame();
         dialogFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         dialogFrame.setBounds(100, 100, 300, 200);
@@ -44,7 +46,7 @@ public class Gui {
         JLabel cityLabel = new JLabel("City:");
         JLabel currencyLabel = new JLabel("Currency:");
 
-        // Zwiększenie rozmiaru czcionki dla nagłówków
+        //Nagłówki
         Font labelFont = new Font("Arial", Font.BOLD, 16);
         countryLabel.setFont(labelFont);
         cityLabel.setFont(labelFont);
@@ -54,7 +56,7 @@ public class Gui {
         JTextField cityField = new JTextField();
         JTextField currencyField = new JTextField();
 
-        // Ustawienie rozmiaru czcionki dla pól tekstowych
+        // Pola tekstowe
         Font fieldFont = new Font("Arial", Font.PLAIN, 16);
         countryField.setFont(fieldFont);
         cityField.setFont(fieldFont);
@@ -67,8 +69,10 @@ public class Gui {
         dialogPanel.add(currencyLabel);
         dialogPanel.add(currencyField);
 
+
+        //Przycisk OK
         JButton okButton = new JButton("OK");
-        okButton.setFont(labelFont); // Zwiększenie rozmiaru czcionki dla przycisku OK
+        okButton.setFont(labelFont);
         dialogPanel.add(okButton);
 
         okButton.addActionListener(new ActionListener() {
@@ -119,6 +123,8 @@ public class Gui {
         JFXPanel panelFx = new JFXPanel();
         frame.getContentPane().add(panelFx, BorderLayout.CENTER);
 
+
+        //Wikipedia
         Platform.runLater(() -> {
             StackPane root = new StackPane();
             Scene scene = new Scene(root, panelFx.getWidth(), panelFx.getHeight());

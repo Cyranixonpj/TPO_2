@@ -33,8 +33,12 @@ public class Service {
         this(country);
 
         getWeather(city);
-        //getRateFor(currency);
-        // getNBPRate();
+
+
+
+
+//        getRateFor(currency);
+//         getNBPRate();
 
     }
 
@@ -61,11 +65,10 @@ public class Service {
         JSONObject jsonObject = jsonArray.getJSONObject(0);
         JSONObject currencies = jsonObject.getJSONObject("currencies");
 
-        // Poniższy kod zakłada, że interesuje Cię pierwsza znaleziona waluta.
-        // W rzeczywistości, możesz potrzebować innej logiki, jeśli kraj ma wiele walut.
+
         String currencyCode = currencies.keys().next(); // Pobiera klucz pierwszej waluty
         JSONObject currency = currencies.getJSONObject(currencyCode);
-        this.moneyCode = currencyCode; // Możesz też chcieć użyć 'currency.getString("name")' w zależności od potrzeb
+        this.moneyCode = currencyCode;
     }
 
 
@@ -155,7 +158,7 @@ public class Service {
             br.close();
 
         } catch (IOException e) {
-            //e.printStackTrace();
+            e.printStackTrace();
         }
         if(tmp!=true) {
             try {
@@ -172,7 +175,7 @@ public class Service {
                 br.close();
 
             } catch (IOException e) {
-                //e.printStackTrace();
+                e.printStackTrace();
             }
         }
         JSONObject jsonObject = new JSONObject(sb.toString());
